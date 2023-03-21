@@ -21,8 +21,8 @@ public:
 
 class Queue {
 public:
-    Node* head = nullptr;
-    Node* tail = nullptr;
+    Node* head = nullptr; // 또는 front
+    Node* tail = nullptr; // 또는 rear
     int size = 0;
     
     int getSize() { return size; }
