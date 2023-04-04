@@ -71,16 +71,19 @@ public:
     
     /*
      특정 depth 내 가장 큰 노드 값 출력 연산
+     : 재귀 사용, 루트부터 시작해서 자식 노드로 내려가면서 해당하는 depth에 있는 노드들만 최대값 검
      */
-    void printLargestAtDepth(Node* root, int depth, int& maxNodeValue) {
-        if(root == nullptr) {
+    void printLargestAtDepth(Node* node, int depth, int& maxNodeValue) {
+        if (depth == -1) {
             return;
         }
-        if(depth == 0) {
-            maxNodeValue = max(maxNodeValue, root->value);
+        if (depth == 0) { // 해당하는 depth에 있는 노드들만 이부분이 실행됨
+            if (node->value > maxNodeValue) { // 최대값변수(maxNodeValue) 업데이트
+                maxNodeValue = node->value;
+            }
         }
-        for(Node* child : root->childList) {
-            printLargestAtDepth(child, depth-1, maxNodeValue);
+        for (Node* child : root->childList) { // 자식 노드로 내려가면서 모든 자식 다 재귀함수 호출
+            printLargestAtDepth(child, depth-1, maxNodeValue); // 자식노드, depth-1한 함수 호출
         }
     }
 };
