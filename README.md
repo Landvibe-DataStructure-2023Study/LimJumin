@@ -42,3 +42,7 @@
 | :--: | :--: | 
 | [바로 가기](https://github.com/Landvibe-DataStructure-2023Study/LimJumin/tree/main/21%20%EC%8B%A4%EC%8A%B5%20%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84%20%ED%81%90) | [바로 가기](https://github.com/Landvibe-DataStructure-2023Study/LimJumin/tree/main/22%20%EC%8B%A4%EC%8A%B5%20%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84%20%ED%81%90)|
 
+## 📌 WEEK10 힙
+| 21년도 |
+| :--: | 
+| [바로 가기](https://github.com/Landvibe-DataStructure-2023Study/LimJumin/tree/main/21%20%EC%8B%A4%EC%8A%B5%20%EC%BD%94%EB%93%9C/%ED%9E%99) |
