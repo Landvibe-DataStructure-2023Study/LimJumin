@@ -146,9 +146,9 @@ public:
             }
 
             if (succ == succPar->left) {
-                succPar->left = nullptr;
+                succPar->left = succ->right;
             } else {
-                succPar->right = nullptr;
+                succPar->right = succ->right;
             }
 
             node->data = succ->data;

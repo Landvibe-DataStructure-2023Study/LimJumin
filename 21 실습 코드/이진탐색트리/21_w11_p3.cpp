@@ -28,9 +28,9 @@ public:
 };
 
 class BST {
-private:
-    Node *root = nullptr;
 public:
+    Node *root = nullptr;
+
     /*
      인자값을 가진 노드를 찾는 탐색 함수
      */
@@ -88,9 +88,7 @@ public:
      오름차순으로 출력
      */
     void print(Node *node) {
-        if (node == nullptr) {
-            return;
-        }
+        if (node == nullptr) return;
 
         print(node->left);
         cout << node->data << " ";
@@ -114,4 +112,3 @@ int main() {
         bst->print(bst->root);
     }
 }
-

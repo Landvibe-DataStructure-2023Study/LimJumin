@@ -129,9 +129,9 @@ public:
             }
             
             if (succ == succPar->left) {
-                succPar->left = nullptr;
+                succPar->left = succ->right;
             } else {
-                succPar->right = nullptr;
+                succPar->right = succ->right;
             }
             
             node->data = succ->data;
@@ -139,11 +139,26 @@ public:
         }
         delete node;
     }
-
+    
     /*
      특정 노드 depth 출력 : 버전 1
      */
     void printDepth(int data) {
+        Node *curNode = search(data);
+        int depth = 0;
+        
+        while (curNode != root) {
+            curNode = curNode->par;
+            depth++;
+        }
+        
+        cout << depth << "\n";
+    }
+    
+    /*
+     특정 노드 depth 출력 : 버전 2 (bst 성질 이용)
+     */
+    void print2Depth(int data) {
         Node *curNode = root;
         int depth = 0;
         
@@ -158,22 +173,6 @@ public:
         
         cout << depth << "\n";
     }
-    
-    
-    /*
-     특정 노드 depth 출력 : 버전 2
-     */
-    void print2Depth(int data) {
-        Node *curNode = search(data);
-        int depth = 0;
-        
-        while (curNode != root) {
-            curNode = curNode->par;
-            depth++;
-        }
-        
-        cout << depth << "\n";
-    }
 };
 
 int main() {
@@ -181,22 +180,20 @@ int main() {
     cin >> numOfTest;
 
     BST *bst = new BST();
-
+    
     while (numOfTest--) {
-           string cmd;
-           int data;
-
-           cin >> cmd >> data;
-
-           if (cmd == "insert") {
-               bst->insert(data);
-           } else if (cmd == "delete") {
-               bst->remove(data);
-           } else if (cmd == "depth") {
-               bst->printDepth(data);
-               // bst->print2Depth(data);
-           }
-       }
+        string cmd;
+        int data;
+        
+        cin >> cmd >> data;
+        
+        if (cmd == "insert") {
+            bst->insert(data);
+        } else if (cmd == "delete") {
+            bst->remove(data);
+        } else if (cmd == "depth") {
+            bst->printDepth(data);
+            // bst->print2Depth(data);
+        }
+    }
 }
-
-

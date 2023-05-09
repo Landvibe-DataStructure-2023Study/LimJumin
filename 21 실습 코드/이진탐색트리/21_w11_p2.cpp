@@ -132,9 +132,9 @@ public:
             }
 
             if (succ == succPar->left) {
-                succPar->left = nullptr;
+                succPar->left = succ->right;
             } else {
-                succPar->right = nullptr;
+                succPar->right = succ->right;
             }
 
             node->data = succ->data;
@@ -147,9 +147,7 @@ public:
      서브트리의 수(전역변수로 선언한 countSubTree)를 계산하기 위한 재귀함수
      */
     void countSubTreeNodes(Node *node) {
-        if (node == nullptr) {
-            return;
-        }
+        if (node == nullptr) return;
 
         countSubTreeNodes(node->left);
         countSubTree++;
