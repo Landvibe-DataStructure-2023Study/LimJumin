@@ -28,9 +28,8 @@ public:
 };
 
 class BST {
-private:
+ public:
     Node *root = nullptr;
-public:
     /*
      인자값을 가진 노드를 찾는 탐색 함수
      */
@@ -114,4 +113,3 @@ int main() {
         bst->print(bst->root);
     }
 }
-
